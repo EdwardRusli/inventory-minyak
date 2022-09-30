@@ -1,0 +1,27 @@
+<style>
+    body {
+        background-color: #1B1B1B;
+        margin-left: 30px;
+        margin-top: 30px;
+    }
+    h1 {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        color: whitesmoke;
+    }
+    a:link {text-decoration: none;}
+    a:hover {text-decoration: underline;}
+    form {
+        font-family: Arial, Helvetica, sans-serif;
+        color: whitesmoke;
+    }
+</style>
+
+
+<h1>Add Data Tambah</h1>
+
+<form action="addrecordtambah/" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="Submit" value="Add">
+</form>

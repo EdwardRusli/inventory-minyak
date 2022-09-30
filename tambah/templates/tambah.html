@@ -1,0 +1,66 @@
+<style>
+    body {
+        background-color: #1B1B1B;
+        margin-left: 30px;
+        margin-top: 30px;
+    }
+    h1 {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        color: whitesmoke;
+    }
+    p {
+        font-family: Arial, Helvetica, sans-serif;
+        color: whitesmoke
+    }
+    a {
+        color: #00ce90
+    }
+    a:link {text-decoration: none;}
+    a:hover {text-decoration: underline;}
+
+    table {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 50%;
+        border: none;
+        background-color: #4e4e50;
+        color: whitesmoke;
+    }
+    th, td {
+        padding: 8px;
+        text-align: left;
+        border:none;
+        font-weight: bold;
+    }
+    tr:nth-child(even) {
+        background-color: #616163;
+    }
+</style>
+
+
+<h1>Data Tambah Stock</h1>
+
+<p>
+    KIAS Stock: {{ kiasstock }} kg <br>
+    SMART Stock: {{ smartstock }} kg<br>
+    <a href="addtambah/">Add Data Tambah</a>
+</p>
+
+<table border="1">
+    <th>Date</th>
+    <th>PO No</th>
+    <th>QTY KGS</th>
+    <th>Vendor</th>
+    <th></th>
+    {% for x in mytambahdata %}
+    <tr>
+    <td>{{ x.date }}</td>
+    <td>{{ x.pono }}</td>
+    <td>{{ x.qtykgs }}</td>
+    <td>{{ x.vendor }}</td>
+    <td><a href="update/{{ x.id }}">Edit</a></td> 
+    <td><a href="delete/{{ x.id }}">Delete</a></td>
+    </tr>
+    {% endfor %}
+    </table>

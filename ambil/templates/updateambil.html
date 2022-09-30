@@ -1,0 +1,60 @@
+<style>
+    body {
+        background-color: #1B1B1B;
+        margin-left: 30px;
+        margin-top: 30px;
+    }
+    h1 {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        color: whitesmoke;
+    }
+    a:link {text-decoration: none;}
+    a:hover {text-decoration: underline;}
+    form {
+        font-family: Arial, Helvetica, sans-serif;
+        color: whitesmoke;
+    }
+</style>
+
+
+<h1>Update Data Ambil</h1>
+
+<form action="updaterecordambil/{{ myambildata.id }}" method="post">
+{% csrf_token %}
+{{ form.as_p }}
+<input type="Submit" value="Update">
+<!--Date:<br>
+<input type="date" name="date" value="{{ myambildata.date }}">
+<br><br>
+
+DO No:<br>
+<input name="dono" value="{{ myambildata.dono }}">
+<br><br>
+
+Driver:<br>
+<input name="driver" value="{{ myambildata.driver }}">
+<br><br>
+
+Nomor Polisi:<br>
+<input name="nopol" value="{{ myambildata.nopol }}">
+<br><br>
+
+QTY KGS:<br>
+<input name="qtykgs" value="{{ myambildata.qtykgs }}">
+<br><br>
+
+Tujuan:<br>
+<input name="tujuan" value="{{ myambildata.tujuan }}">
+<br><br>
+
+Lokasi Ambil:<br>
+<input name="lokasiambil" value="{{ myambildata.lokasiambil }}">
+<br><br>
+
+Status:<br>
+<input type="checkbox" name="status" value="{{ myambildata.status }}">
+<br><br>
+
+<input type="submit" value="Submit">-->
+</form>

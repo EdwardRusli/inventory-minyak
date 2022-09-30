@@ -1,0 +1,75 @@
+<style>
+    body {
+        background-color: #1B1B1B;
+        margin-left: 30px;
+        margin-top: 30px;
+    }
+    h1 {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        color: whitesmoke;
+    }
+    p {
+        font-family: Arial, Helvetica, sans-serif;
+        color: whitesmoke
+    }
+    a {
+        color: #00ce90
+    }
+    a:link {text-decoration: none;}
+    a:hover {text-decoration: underline;}
+
+    table {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 50%;
+        border: none;
+        background-color: #4e4e50;
+        color: whitesmoke;
+    }
+    th, td {
+        padding: 8px;
+        text-align: left;
+        border:none;
+        font-weight: bold;
+    }
+    tr:nth-child(even) {
+        background-color: #616163;
+    }
+</style>
+
+
+<h1>Data Ambil</h1>
+
+<p>
+    KIAS Stock: {{ kiasstock }} kg <br>
+    SMART Stock: {{ smartstock }} kg<br>
+    <a href="addambil/">Add Data Ambil</a>
+</p>
+
+<table border="1">
+<th>Date</th>
+<th>DO No</th>
+<th>Driver</th>
+<th>Nomor Polisi</th>
+<th>QTY KGS</th>
+<th>Tujuan</th>
+<th>Lokasi Ambil</th>
+<th>Status</th>
+<th></th>
+{% for x in myambildata %}
+<tr>
+<td>{{ x.date }}</td>
+<td>{{ x.dono }}</td>
+<td>{{ x.driver }}</td>
+<td>{{ x.nopol }}</td>
+<td>{{ x.qtykgs }}</td>
+<td>{{ x.tujuan }}</td>
+<td>{{ x.lokasiambil }}</td>
+<td>{{ x.status }}</td>
+<td><a href="updateambil/{{ x.id }}">Edit</a></td> 
+<td><a href="deleteambil/{{ x.id }}">Delete</a></td>
+</tr>
+{% endfor %}
+</table>
+
