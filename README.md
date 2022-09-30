@@ -1,2 +1,2 @@
 # inventory-minyak
-Currently in progress; Many bugs encountered.
+Currently in progress; many bugs encountered.
